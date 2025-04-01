@@ -98,7 +98,7 @@ const NavBar = () => {
             FirstCheque 
           </span>
           <span className="self-center text-sm font-medium">
-            Kartik Bhargava (23BAI1320)
+            Kartik Bhargava (23BAI1320),Web Programming,2025,Cse(Ai and Ml)
           </span>
         </a>
       </div>
