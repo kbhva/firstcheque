@@ -28,7 +28,7 @@ export default function Page({ params }: { params: { dept: string } }) {
       ) : (
         <div className="grid grid-cols-3 gap-4 w-[60%] mx-auto">
           <h1 className="col-span-3 text-5xl font-bold text-center m-8">
-            Jobs in {paramJobNameMapping[params.dept]}
+          Jobs in {paramJobNameMapping[params.dept as keyof typeof paramJobNameMapping]}
           </h1>
           {jobs.map((job, index) => (
             <JobCard

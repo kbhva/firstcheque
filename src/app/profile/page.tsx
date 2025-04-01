@@ -1,7 +1,6 @@
 "use client";
 import ProfileContent from "@/components/profileComponents/ProfileContent"
 import ProjectContent from "@/components/profileComponents/ProjectContent";
-import WalletContent from "@/components/profileComponents/WalletContent";
 import React from "react";
 import { useState } from "react";
 

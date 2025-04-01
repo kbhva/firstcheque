@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 interface JobCardDialogProps {
   isOpen: boolean;
@@ -20,15 +20,17 @@ const JobCardDialog: React.FC<JobCardDialogProps> = ({
 }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Close the dialog when clicking outside of it
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dialogRef.current &&
-      !dialogRef.current.contains(event.target as Node)
-    ) {
-      onClose();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (
+        dialogRef.current &&
+        !dialogRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -37,7 +39,7 @@ const JobCardDialog: React.FC<JobCardDialogProps> = ({
         document.removeEventListener("mousedown", handleClickOutside);
       };
     }
-  }, [isOpen]);
+  }, [isOpen, handleClickOutside]);
 
   if (!isOpen) return null;
 

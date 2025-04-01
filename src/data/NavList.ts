@@ -12,7 +12,9 @@ const withAuthOptionsFreelancer: navOptions[] = [
 const withAuthOptionsEmployer: navOptions[] = [
   { title: "Discover", route: "/" },
   { title: "Explore", route: "/explore" },
-  { title: "Post A Job", route: "/postJob" },
+  // { title: "Post A Job", route: "/postJob" },
+  { title: "ChatBot", route: "/chatbot" },
+
 ];
 
 const withoutAuthOptions: navOptions[] = [
