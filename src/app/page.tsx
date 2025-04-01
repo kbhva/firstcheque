@@ -15,9 +15,9 @@ export default function Home() {
       <div className=" flex flex-col items-center text-center justify-center">
         {user ? (
           role === "freelancer" ? (
-            <DashboardPrivate />
-          ) : (
             <EmployerDashboard />
+          ) : (
+            <DashboardPrivate/>
           )
         ) : (
           <DashboardPublic />
